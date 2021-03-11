@@ -1,0 +1,17 @@
+.card {
+    width: 30rem !important;
+    margin: 15px !important;
+    text-align: center !important ;
+}
+
+.card-body {
+    font-weight: bold;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+.btn {
+    margin: 10px;
+}

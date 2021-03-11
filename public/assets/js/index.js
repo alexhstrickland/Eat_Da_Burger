@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           console.log('test');
           // Grabs the id of the element that goes by the name, "id"
           const id = e.target.getAttribute('data-id');
-  
+          
           const devourBur = {
             devoured: true,
           };
   
-          fetch(`/api/burgers/${id}`, {
+          fetch(`/api/${id}`, {
             method: 'PUT',
             headers: {
               Accept: 'application/json',
@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   
     // CREATE
-    const createDaBurger = document.getElementById('add');
+    const createDaBurger = document.getElementById('create-form');
   
-    if (createCatBtn) {
-      createCatBtn.addEventListener('submit', (e) => {
+    if (createDaBurger) {
+      createDaBurger.addEventListener('submit', (e) => {
         e.preventDefault();
   
         // Grabs the value of the textarea that goes by the name, "quote"
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         };
   
         // Send POST request to create a new quote
-        fetch('/api/burgers', {
+        fetch('/api', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
           // Make sure to serialize the JSON body
           body: JSON.stringify(newBur),
-        }).then((response) => {
+        }).then(() => {
           // Empty the form
-          document.getElementById('add').value = '';
+          document.getElementById('bur').value = '';
   
           // Reload the page so the user can see the new quote
           console.log('Created a burger!');

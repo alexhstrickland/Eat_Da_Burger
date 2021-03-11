@@ -1,7 +1,7 @@
 const connection = require('./connection.js');
 
 const orm = {
-    selectAll(tableName, cb) {
+    all(tableName, cb) {
       const queryString = 'SELECT * FROM ??';
       connection.query(
         queryString,
@@ -13,7 +13,7 @@ const orm = {
         }
       );
     },
-    insertOne(tableName, burgerName, cb) {
+    create(tableName, burgerName, cb) {
       const queryString = 'INSERT INTO ?? SET ?';
       console.log(queryString);
       connection.query(
@@ -26,7 +26,7 @@ const orm = {
         }
       );
     },
-    updateOne(tableName, devoured, col, val, cb) {
+    update(tableName, devoured, col, val, cb) {
       const queryString ='Update ?? SET ? WHERE ?? = ?';
         console.log(queryString);
         connection.query(
