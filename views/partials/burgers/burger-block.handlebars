@@ -1,9 +1,8 @@
 <div>
 	{{burger_name}}
-	{{#if devoured}}
-	{{else}}
-	<button class="devour btn btn-dark" data-id="{{id}}" data-newdevoured="{{devoured}}">
+	{{#unless devoured}}
+	<button class="devour btn btn-dark" type="submit" data-id="{{this.id}}">
 		Eat-da-burger!
 	</button>
-	{{/if}}
+	{{/unless}}
 </div>
